@@ -1,8 +1,8 @@
 <div class="backdrop" (click)="onClose()"></div>
-<div class="form-box" [@form]>
+<div class="form-box col-xs-12 col-sm-12" [@form]>
   <form autocomplete="off" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
     <div class="row mt-2">
-      <div class="col-md-6">
+      <div class="col-md-6 ">  
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input

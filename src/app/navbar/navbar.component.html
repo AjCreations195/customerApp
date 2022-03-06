@@ -7,18 +7,21 @@
   <a routerLinkActive="active" class="navButton" fxHide.xs mat-button routerLink="/customer" >Customers</a>
   <a routerLinkActive="active" class="navButton" mat-button routerLink="/orders">Orders</a>
   <a routerLinkActive="active" class="navButton" mat-button routerLink="/about">About</a>
-</div>
-
   <a routerLinkActive="active" class="navButton" mat-button routerLink="/login">Login</a>
 
+</div>
+
+  
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="d-block d-md-none" >
           <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menuItem" aria-label="additional links">
-              <mat-icon>menu</mat-icon>
+              <mat-icon class="navButton">menu</mat-icon>
           </a>
-          <mat-menu #menuItem="matMenu"  >
-              <button mat-menu-item routerLink="/recipes" >Customers</button>
-              <button mat-menu-item routerLink="/shopping-list">About</button>
-              <button mat-menu-item routerLink="/shopping-list">Orders</button>
+          <mat-menu #menuItem="matMenu">
+              <button routerLinkActive="active"  mat-menu-item routerLink="/customer"  >Customers</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/orders">About</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/about">Orders</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/login">Login</button>
+
             </mat-menu>
       </div>
 </mat-toolbar>

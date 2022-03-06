@@ -35,6 +35,20 @@ textarea.ng-invalid.ng-touched {
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
+@media only screen and (max-width: 600px) {
+  .form-box {
+    align-items: center;
+    position: fixed;
+    top: 3vh;
+    width: 50vh;
+    z-index: 100;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+  .form-box-actions {
+     margin-top:-25px;
+  }
+}
 
 .form-box-actions {
   text-align: right;
