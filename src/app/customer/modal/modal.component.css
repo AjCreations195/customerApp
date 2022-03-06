@@ -4,9 +4,9 @@ height: 50px;
 padding: 35px;
 text-align: center;
 } */
-.row {
+/* .row {
   margin-top: 5px;
-}
+} */
 label {
   font-weight: bold;
 }
@@ -24,7 +24,7 @@ textarea.ng-invalid.ng-touched {
   background: rgba(0, 0, 0, 0.45);
   z-index: 50;
 }
-.form-box {
+/* .form-box {
   position: fixed;
   top: 10vh;
   left: 30vw;
@@ -51,12 +51,28 @@ textarea.ng-invalid.ng-touched {
 
 .form-box-actions {
   text-align: right;
-}
-:host {
+} */
+/* :host {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 .help-block {
   color: red;
+}
+
+label {
+  font-size: 17px;
+  font-weight: 500;
+}
+.center {
+  display: block;
+  margin: 0 auto;
+  padding-top: 0px;
+}
+.containerDiv {
+  padding-top: 0px;
+  width: 75%;
+  margin: auto;
+  margin-left: auto;
 }
