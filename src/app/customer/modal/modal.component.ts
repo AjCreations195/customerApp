@@ -16,7 +16,7 @@ import { CustomerService } from '../customer.service';
     trigger('form',[
       state('in',style({
         opacity:1,
-        transform:'translateX(0px)'
+        transform:'translateX(-50px)'
       })),
       transition('void =>*',[
         style({
