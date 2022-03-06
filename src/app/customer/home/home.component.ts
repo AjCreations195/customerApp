@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
 totalLength=0;
 page=1;
  filteredString='';
-// @Output() searchedContent= new EventEmitter<string>()
-
   constructor(private router:Router,
     private customerService:CustomerService) { }
 

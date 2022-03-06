@@ -4,39 +4,39 @@ height: 50px;
 padding: 35px;
 text-align: center;
 } */
-.row{
+.row {
   margin-top: 5px;
 }
-label{
+label {
   font-weight: bold;
 }
 input.ng-invalid.ng-touched,
-textarea.ng-invalid.ng-touched{
+textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-.backdrop{
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 50;
 }
-.form-box{
+.form-box {
   position: fixed;
-  top:10vh;
+  top: 10vh;
   left: 30vw;
 
-  width:40vw;
+  width: 40vw;
   padding: 16px;
   z-index: 100;
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
-.form-box-actions{
+.form-box-actions {
   text-align: right;
 }
 :host {
@@ -44,6 +44,6 @@ textarea.ng-invalid.ng-touched{
   flex-direction: column;
   align-items: flex-start;
 }
-.help-block{
-color: red;
+.help-block {
+  color: red;
 }

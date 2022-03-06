@@ -1,9 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import {
   Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
   OnInit,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -30,12 +27,9 @@ import { CustomerService } from '../customer.service';
     ])
   ]
 })
-export class ModalComponent implements OnInit, OnDestroy {
-  @Input() showAdd = true;
+export class ModalComponent implements OnInit {
   editMode = false;
   isSubmitted = false;
-  readOnly = false;
-  readonlySub = new Subscription();
   customerForm: FormGroup = new FormGroup({});
   id = 0;
 
@@ -49,15 +43,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.editMode = params['id'] != null;
-    });
-    this.customerService.isReadonly.subscribe((type: boolean) => {
-      console.log(type);
-
-      if (type == true) {
-        this.readOnly = true;
-      } else {
-        this.readOnly = false;
-      }
     });
     this.initForm();
   }
@@ -114,10 +99,5 @@ export class ModalComponent implements OnInit, OnDestroy {
       ]),
       imagePath: new FormControl(imagePath, Validators.required),
     });
-  }
-  ngOnDestroy(): void {
-    // if(this.readonlySub){
-    //   this.readonlySub.unsubscribe();
-    // }
   }
 }

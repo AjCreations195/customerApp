@@ -24,12 +24,10 @@ export class CardViewComponent implements OnInit {
     this.customers = this.customerService.getCustomers();
   }
 
-  onEditCustomer(index: number,inputType:boolean) {
+  onEditCustomer(index: number) {
     this.router.navigate(['customer', index, 'edit']);
-    this.customerService.isReadonly.next(inputType);
-  }
-  showMore(index:number,inputType:boolean){
+    }
+  showMore(index:Number){
     this.router.navigate(['customer', index ]);
-    this.customerService.isReadonly.next(inputType);
   }
 }

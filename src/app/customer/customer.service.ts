@@ -1,5 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Customer } from './customer.model';
 
@@ -8,7 +7,8 @@ import { Customer } from './customer.model';
 })
 export class CustomerService {
   customersChanged = new Subject<Customer[]>();
-  isReadonly = new Subject<boolean>()
+  isReadonly = new Subject<boolean>();
+
   private customers: Customer[] = [
     new Customer(
       'Allen',
