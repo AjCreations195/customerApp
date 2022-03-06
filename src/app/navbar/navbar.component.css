@@ -1,0 +1,24 @@
+.active{
+  background-color: rgb(250, 255, 255);
+color:black;
+}
+.navButton:hover{
+  color: black;
+}
+.dropButton{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.spacer{
+flex:1 1 auto;
+}
+.display{
+  z-index: 1;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+}
+

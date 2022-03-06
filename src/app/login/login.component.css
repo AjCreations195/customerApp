@@ -1,0 +1,16 @@
+label {
+  font-size: 17px;
+  font-weight: 500;
+}
+.center {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.containerDiv {
+  padding-top: 6rem;
+  width: 75%;
+  margin: auto;
+  margin-left: auto;
+}

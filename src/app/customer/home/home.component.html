@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-black fw-bold">
+        <i class="fa-solid fa-user-tie"></i> Customers
+      </p>
+
+      <button class="btn btn-default" routerLink="/">
+        <i class="fa-solid fa-address-card"></i> Card view
+      </button>
+      <button class="btn btn-default" routerLink="/customer/list-view">
+        <i class="fa-solid fa-list-ul"></i> List view
+      </button>
+      <button class="btn btn-default" type="button" (click)="addNewCustomer()">
+        <i class="fa-solid fa-user-plus"></i> New Customer
+      </button>
+    </div>
+  </div>
+</div>
+<div class="containerDiv">
+  <div class="">
+    <router-outlet></router-outlet>
+  </div>
+</div>

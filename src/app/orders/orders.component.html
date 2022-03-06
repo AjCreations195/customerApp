@@ -1,0 +1,22 @@
+<div class="containerDiv">
+  <table class="table table-secondary">
+    <thead>
+      <tr>
+        <th scope="col">Sl.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">item</th>
+        <th scope="col">Place</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ order.name }}</td>
+        <td>{{ order.item }}</td>
+        <td>{{ order.place }}</td>
+        <td>{{ order.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
