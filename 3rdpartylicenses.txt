@@ -98,6 +98,9 @@ THE SOFTWARE.
 font-awesome
 (OFL-1.1 AND MIT)
 
+ng-dialog-animation
+ISC
+
 ng2-search-filter
 MIT
 MIT License
