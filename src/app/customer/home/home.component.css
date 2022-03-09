@@ -4,6 +4,12 @@
   margin: auto;
   margin-left: auto;
 }
+@media only screen and (max-width: 576px) {
+  .containerDiv {
+    align-items: center;
+    width: 80%;
+  }
+}
 
 .mat-list-base.inline-list {
   display: flex;
@@ -12,9 +18,6 @@
 .form {
   position: relative;
 }
-/* .search{
-margin-left: auto;
-} */
 
 .form .fa-search {
   position: absolute;

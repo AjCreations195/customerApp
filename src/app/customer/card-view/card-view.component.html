@@ -25,7 +25,7 @@
         let i = index
       "
     >
-      <mat-card class="example-card mat-elevation-z4">
+      <mat-card class="example-card mat-elevation-z4 h-100">
         <mat-card-header class="justify-content-between d-flex mat-header p-2">
           <mat-card-title class="mt-2">
             {{ customer.firstName }} {{ customer.lastName }}
@@ -64,9 +64,3 @@
 <div class="mt-4 text-center">
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
-<!-- <app-modal></app-modal> -->
-<!-- <app-slider [editMode]="true"  [customer]="customerSelected"  [(visible)]="showDialog"> -->
-<!-- <h1>Hello World</h1>
-  <p>ddd</p>
-	<button (click)="showDialog = !showDialog" class="btn">Close</button> -->
-<!-- </app-slider> -->

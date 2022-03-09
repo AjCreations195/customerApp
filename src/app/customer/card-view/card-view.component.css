@@ -1,19 +1,17 @@
 .example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
-  }
-mat-card{
-padding: 0px;
+  max-width: 400px;
+  margin-bottom: 8px;
 }
-.mat-header
-{
-background-color: black;
-color: white;
+mat-card {
+  padding: 0px;
 }
-.content{
-padding: auto;
-
+.mat-header {
+  background-color: black;
+  color: white;
 }
-.content > mat-card{
-width: 200px;
+.content {
+  padding: auto;
+}
+.content > mat-card {
+  width: 200px;
 }
