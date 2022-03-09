@@ -1,0 +1,18 @@
+.help-block {
+  color: red;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.image {
+  max-height: 100px;
+}
+.example-radio-button {
+  margin: 5px;
+}

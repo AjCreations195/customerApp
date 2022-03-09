@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { Customer } from '../customer.model';
 import { CustomerService } from '../customer.service';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
   selector: 'app-list-view',
@@ -15,7 +17,8 @@ export class ListViewComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialog: NgDialogAnimationService
   ) {}
 
   ngOnInit(): void {
@@ -24,10 +27,17 @@ export class ListViewComponent implements OnInit {
     });
     this.customers = this.customerService.getCustomers();
   }
-  onEditCustomer(index: number) {
-    this.router.navigate(['customer', index, 'edit']);
+  onEditCustomer(customer: Customer) {
+    this.dialog.open(SliderComponent, {
+      data: customer,
+      width: '50%',
+      panelClass: 'fullscreen-dialog',
+      position: { right: '0' },
+      animation: { to: 'left' },
+    });
   }
   onDeleteCustomer(index: number) {
     this.customerService.deleteCustomer(index);
+    confirm('Are You Sure?');
   }
 }

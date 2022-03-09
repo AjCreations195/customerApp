@@ -1,0 +1,97 @@
+<h1 mat-dialog-title class="text-center">
+  {{ editData ? "Update the Customer" : "Add New Customer" }}
+</h1>
+<form autocomplete="off" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <div matDialogContent>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your First Name</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error
+          *ngIf="customerForm.controls['firstName'].getError('maxlength')"
+          >must be less than 6 characters</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Your Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput formControlName="email" placeholder="pat@example.com" />
+        <mat-error *ngIf="customerForm.controls['email'].getError('email')"
+          >Email must be in th valid format!</mat-error
+        >
+      </mat-form-field>
+      <label id="example-radio-group-label"><h4>Your Gender</h4> </label>
+      <mat-radio-group
+        formControlName="gender"
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+      >
+        <mat-radio-button
+          class="example-radio-button"
+          *ngFor="let gender of genders"
+          [value]="gender"
+        >
+          {{ gender }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your Address</mat-label>
+        <input matInput formControlName="address" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your Contact Number</mat-label>
+        <input
+          matInput
+          formControlName="contactNumber"
+          placeholder="1234567890"
+        />
+        <mat-error
+          *ngIf="customerForm.controls['contactNumber'].getError('pattern')"
+          >Must be 10 characters!</mat-error
+        >
+      </mat-form-field>
+      <div>
+        <div>
+          <img [src]="imagePath.value" class="img-responsive image" alt="" />
+        </div>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Your Profile Image Url</mat-label>
+        <input matInput formControlName="imagePath" #imagePath id="imagePath" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-action [align]="'end'">
+    <button
+      color="primary"
+      [disabled]="!customerForm.valid"
+      type="submit"
+      mat-raised-button
+    >
+      {{ buttonAction }}
+    </button>
+    <button
+      color="warn"
+      class="mx-2"
+      type="button"
+      (click)="onDeleteCustomer()"
+      mat-raised-button
+      *ngIf="editData"
+    >
+      Delete
+    </button>
+    <button
+      type="button"
+      id="cancel"
+      class="mx-2"
+      mat-raised-button
+      mat-dialog-close
+    >
+      X
+    </button>
+  </div>
+</form>

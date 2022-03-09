@@ -8,12 +8,14 @@ import { Customer } from './customer.model';
 export class CustomerService {
   customersChanged = new Subject<Customer[]>();
   isReadonly = new Subject<boolean>();
+  selectedCustomer = new Subject<Customer>();
 
   private customers: Customer[] = [
     new Customer(
       'Allen',
       'Max',
       'allen@gmail.com',
+      'male',
       'India',
       125466444,
       'https://tse4.mm.bing.net/th?id=OIP.muMt9p-2cZwTfdavebT4uwHaHa&pid=Api&P=0&w=153&h=153'
@@ -22,6 +24,7 @@ export class CustomerService {
       'Lilly',
       'Paul',
       'lilly@gmail.com',
+      'female',
       'Canada',
       333466444,
       'https://tse4.mm.bing.net/th?id=OIP.yGPcvE2vUlal7X-fIvobzgHaHa&pid=Api&P=0&w=158&h=158'
@@ -30,14 +33,16 @@ export class CustomerService {
       'Aman',
       'Khan',
       'aman@gmail.com',
+      'male',
       'Australia',
       8797466444,
       'https://tse4.mm.bing.net/th?id=OIP.yGPcvE2vUlal7X-fIvobzgHaHa&pid=Api&P=0&w=158&h=158'
     ),
     new Customer(
-      'Aman',
-      'Khan',
+      'Saam',
+      'Neha',
       'aman@gmail.com',
+      'female',
       'Australia',
       8797466444,
       'https://tse4.mm.bing.net/th?id=OIP.yGPcvE2vUlal7X-fIvobzgHaHa&pid=Api&P=0&w=158&h=158'
@@ -61,5 +66,9 @@ export class CustomerService {
   deleteCustomer(index: number) {
     this.customers.splice(index, 1);
     this.customersChanged.next(this.customers.slice());
+  }
+
+  getIndex(customer: Customer) {
+    return this.customers.indexOf(customer);
   }
 }

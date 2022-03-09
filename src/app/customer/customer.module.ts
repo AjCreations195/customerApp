@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CardViewComponent } from './card-view/card-view.component';
 import { ListViewComponent } from './list-view/list-view.component';
-import { ModalComponent } from './modal/modal.component';
+import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,13 +15,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SliderComponent } from './slider/slider.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [
     CardViewComponent,
     ListViewComponent,
-    ModalComponent,
     HomeComponent,
-    // FilterPipe
+    SliderComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +40,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FlexLayoutModule,
     MatIconModule,
     MatFormFieldModule,
+    MatDialogModule,
+    MatInputModule,
+    MatRadioModule,
   ],
+  providers: [NgDialogAnimationService],
 })
 export class CustomerModule {}

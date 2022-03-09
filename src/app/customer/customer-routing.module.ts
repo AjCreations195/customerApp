@@ -12,9 +12,6 @@ const routes: Routes = [
     children: [
       { path: '', component: CardViewComponent },
       { path: 'list-view', component: ListViewComponent },
-      { path: 'new', component: ModalComponent },
-      { path: ':id', component: ModalComponent },
-      { path: ':id/edit', component: ModalComponent },
     ],
   },
 ];

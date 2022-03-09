@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatMenuModule} from '@angular/material/menu';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatButtonModule,
     MatMenuModule,
   ],
-  providers: [],
+  // providers: [ NgDialogAnimationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

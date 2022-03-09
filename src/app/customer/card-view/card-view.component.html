@@ -22,7 +22,9 @@
         let customer of customers
           | paginate: { itemsPerPage: 4, currentPage: page }
           | filter: filteredString;
-        let i = index">
+        let i = index
+      "
+    >
       <mat-card class="example-card mat-elevation-z4">
         <mat-card-header class="justify-content-between d-flex mat-header p-2">
           <mat-card-title class="mt-2">
@@ -31,7 +33,7 @@
           <div>
             <button
               mat-button
-              (click)="onEditCustomer(i)"
+              (click)="onEditCustomer(customer)"
               color="primary"
             >
               Edit<mat-icon>edit</mat-icon>
@@ -45,7 +47,13 @@
           <img mat-card-md-image [src]="customer.imagePath" />
         </mat-card-title-group>
         <mat-card-content>
-          <button mat-button color="primary" (click)="showMore(i)">
+          <button
+            mat-button
+            color="primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            (click)="showMore(customer)"
+          >
             View More<mat-icon>open_in_new</mat-icon>
           </button>
         </mat-card-content>
@@ -56,3 +64,9 @@
 <div class="mt-4 text-center">
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
+<!-- <app-modal></app-modal> -->
+<!-- <app-slider [editMode]="true"  [customer]="customerSelected"  [(visible)]="showDialog"> -->
+<!-- <h1>Hello World</h1>
+  <p>ddd</p>
+	<button (click)="showDialog = !showDialog" class="btn">Close</button> -->
+<!-- </app-slider> -->

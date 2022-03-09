@@ -1,7 +1,9 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { Customer } from '../customer.model';
 import { CustomerService } from '../customer.service';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
   selector: 'app-card-view',
@@ -10,11 +12,14 @@ import { CustomerService } from '../customer.service';
 })
 export class CardViewComponent implements OnInit {
   page = 1;
+  showDialog = false;
+  customerSelected!: Customer;
   customers: Customer[] = [];
-  filteredString='';
+  filteredString = '';
   constructor(
     private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    public dialog: NgDialogAnimationService
   ) {}
 
   ngOnInit(): void {
@@ -24,10 +29,23 @@ export class CardViewComponent implements OnInit {
     this.customers = this.customerService.getCustomers();
   }
 
-  onEditCustomer(index: number) {
-    this.router.navigate(['customer', index, 'edit']);
-    }
-  showMore(index:Number){
-    this.router.navigate(['customer', index ]);
+  onEditCustomer(customer: Customer) {
+    this.dialog.open(SliderComponent, {
+      data: customer,
+      width: '50%',
+      panelClass: 'fullscreen-dialog',
+      position: { right: '0' },
+      animation: { to: 'left' },
+    });
+  }
+  showMore(customer: Customer) {
+    this.dialog.open(SliderComponent, {
+      data: customer,
+      width: '50%',
+      panelClass: 'fullscreen-dialog',
+      position: { right: '0' },
+      animation: { to: 'left' },
+    });
+    this.customerService.isReadonly.next(true);
   }
 }
