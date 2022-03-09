@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardViewComponent } from './card-view/card-view.component';
 import { HomeComponent } from './home/home.component';
 import { ListViewComponent } from './list-view/list-view.component';
-import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
   {

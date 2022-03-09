@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { CustomerService } from '../customer.service';
 import { SliderComponent } from '../slider/slider.component';
@@ -20,12 +19,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addNewCustomer() {
-    this.customerService.isReadonly.next(false);
-  }
   openDialog(): void {
     const dialogRef = this.dialog.open(SliderComponent, {
-      width: '50%',
+      width: '50rem',
       panelClass: 'fullscreen-dialog',
       position: { right: '0' },
       animation: { to: 'left' },

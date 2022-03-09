@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { Customer } from '../customer.model';
@@ -32,7 +32,7 @@ export class CardViewComponent implements OnInit {
   onEditCustomer(customer: Customer) {
     this.dialog.open(SliderComponent, {
       data: customer,
-      width: '50%',
+      width: '50rem',
       panelClass: 'fullscreen-dialog',
       position: { right: '0' },
       animation: { to: 'left' },
@@ -41,11 +41,10 @@ export class CardViewComponent implements OnInit {
   showMore(customer: Customer) {
     this.dialog.open(SliderComponent, {
       data: customer,
-      width: '50%',
+      width: '50rem',
       panelClass: 'fullscreen-dialog',
       position: { right: '0' },
       animation: { to: 'left' },
     });
-    this.customerService.isReadonly.next(true);
   }
 }

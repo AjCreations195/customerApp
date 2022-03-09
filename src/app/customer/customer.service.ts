@@ -7,7 +7,6 @@ import { Customer } from './customer.model';
 })
 export class CustomerService {
   customersChanged = new Subject<Customer[]>();
-  isReadonly = new Subject<boolean>();
   selectedCustomer = new Subject<Customer>();
 
   private customers: Customer[] = [

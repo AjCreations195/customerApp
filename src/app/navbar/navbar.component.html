@@ -1,58 +1,28 @@
 <mat-toolbar color="primary" class="mat-elevation-z6 display">
   <span routerLink="/">
-    <i class="fa-solid fa-user-group"></i> Customer Manager
+    <i class="fa-solid fa-user-group"></i>  Customer Manager
   </span>
   <div class="spacer"></div>
   <div class="d-none d-md-block">
-    <a
-      routerLinkActive="active"
-      class="navButton"
-      mat-button
-      routerLink="/orders"
-      >Orders</a
-    >
-    <a
-      routerLinkActive="active"
-      class="navButton"
-      mat-button
-      routerLink="/about"
-      >About</a
-    >
-    <a
-      routerLinkActive="active"
-      class="navButton"
-      mat-button
-      routerLink="/login"
-      >Login</a
-    >
-  </div>
-  <a
-    routerLinkActive="active"
-    class="navButton"
-    mat-button
-    routerLink="/customer"
-    >Customers</a
-  >
+  <a routerLinkActive="active" class="navButton" fxHide.xs mat-button routerLink="/customer" >Customers</a>
+  <a routerLinkActive="active" class="navButton" mat-button routerLink="/orders">Orders</a>
+  <a routerLinkActive="active" class="navButton" mat-button routerLink="/about">About</a>
+  <a routerLinkActive="active" class="navButton" mat-button routerLink="/login">Login</a>
 
-  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="d-block d-md-none">
-    <a
-      class="valign-center"
-      mat-icon-button
-      [matMenuTriggerFor]="menuItem"
-      aria-label="additional links"
-    >
-      <mat-icon class="navButton">menu</mat-icon>
-    </a>
-    <mat-menu #menuItem="matMenu">
-      <button routerLinkActive="active" mat-menu-item routerLink="/about">
-        About
-      </button>
-      <button routerLinkActive="active" mat-menu-item routerLink="/orders">
-        Orders
-      </button>
-      <button routerLinkActive="active" mat-menu-item routerLink="/login">
-        Login
-      </button>
-    </mat-menu>
-  </div>
+</div>
+
+  
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="d-block d-md-none" >
+          <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menuItem" aria-label="additional links">
+              <mat-icon class="navButton">menu</mat-icon>
+          </a>
+          <mat-menu #menuItem="matMenu">
+              <button routerLinkActive="active"  mat-menu-item routerLink="/customer">Customers</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/about">About</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/orders">Orders</button>
+              <button routerLinkActive="active"  mat-menu-item routerLink="/login">Login</button>
+
+            </mat-menu>
+      </div>
 </mat-toolbar>
+

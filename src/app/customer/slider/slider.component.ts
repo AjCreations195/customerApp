@@ -71,9 +71,10 @@ export class SliderComponent implements OnInit {
     }
   }
   onDeleteCustomer() {
-    this.customerService.deleteCustomer(this.id);
-    confirm('Are you want to delete it?');
-    this.dialogRef.close();
-    this.customerForm.reset();
+    if (confirm('Are You Sure?')) {
+      this.customerService.deleteCustomer(this.id);
+      this.dialogRef.close();
+      this.customerForm.reset();
+    }
   }
 }

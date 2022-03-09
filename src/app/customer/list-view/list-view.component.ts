@@ -30,14 +30,15 @@ export class ListViewComponent implements OnInit {
   onEditCustomer(customer: Customer) {
     this.dialog.open(SliderComponent, {
       data: customer,
-      width: '50%',
+      width: '50rem',
       panelClass: 'fullscreen-dialog',
       position: { right: '0' },
       animation: { to: 'left' },
     });
   }
   onDeleteCustomer(index: number) {
-    this.customerService.deleteCustomer(index);
-    confirm('Are You Sure?');
+    if (confirm('Are You Sure?')) {
+      this.customerService.deleteCustomer(index);
+    }
   }
 }

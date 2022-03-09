@@ -24,7 +24,7 @@ import { MatRadioModule } from '@angular/material/radio';
     CardViewComponent,
     ListViewComponent,
     HomeComponent,
-    SliderComponent
+    SliderComponent,
   ],
   imports: [
     CommonModule,
