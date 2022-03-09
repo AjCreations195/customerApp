@@ -37,7 +37,8 @@ export class ListViewComponent implements OnInit {
     });
   }
   onDeleteCustomer(index: number) {
-    this.customerService.deleteCustomer(index);
-    alert('Deleted the customer successfully');
+    if (confirm('Are you Sure?')) {
+      this.customerService.deleteCustomer(index);
+    }
   }
 }
